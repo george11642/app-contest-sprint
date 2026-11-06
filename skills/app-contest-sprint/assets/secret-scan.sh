@@ -7,10 +7,10 @@ PAT='AC[0-9a-f]{32}|SK[0-9a-f]{32}|sk_live_|sk-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9
 allow() { if [ -f .secret-scan-allow ]; then grep -vE '^#' .secret-scan-allow | grep -vF -f - ; else cat; fi; }
 FOUND=0
 report() { [ -n "$1" ] && { echo "$2:"; echo "$1" | cut -c1-120 | head -20; FOUND=1; }; }
-report "$(git grep -nIE "$PAT" | allow)" "tracked files"
+report "$(git grep -nIE "$PAT" -- . ':!*secret-scan.sh' | allow)" "tracked files"
 U=$(git ls-files --others --exclude-standard)
-[ -n "$U" ] && report "$(echo "$U" | tr '\n' '\0' | xargs -0 grep -nIE "$PAT" 2>/dev/null | allow)" "untracked files"
-report "$(git log --all -p --no-color | grep -E '^\+' | grep -E "$PAT" | allow)" "history"
+[ -n "$U" ] && report "$(echo "$U" | tr '\n' '\0' | xargs -0 grep -nIE "$PAT" 2>/dev/null | grep -v 'secret-scan.sh:' | allow)" "untracked files"
+report "$(git log --all -p --no-color -- . ':!*secret-scan.sh' | grep -E '^\+' | grep -E "$PAT" | allow)" "history"
 if [ "${1:-}" != "" ] && [ -f "$1" ]; then
   # exact local values, never echoed
   while IFS= read -r v; do
