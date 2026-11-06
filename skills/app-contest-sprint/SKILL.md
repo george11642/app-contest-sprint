@@ -74,6 +74,7 @@ Run the phases the triage mode allows. Skip any phase whose gap table row is alr
 | 0. Scan | [project-scan.md](references/project-scan.md) | Gap table in the ledger, blockers raised |
 | 1. App | [app-build.md](references/app-build.md), [ios-testflight.md](references/ios-testflight.md) | Primary flow runs, screens captured with fictional data. Optional in Triage if no app exists: go to Figma |
 | 2. Prototype | [figma-prototype.md](references/figma-prototype.md) | Link opens signed out on Start, audit clean, click-through passes the stop rule |
+| 2a. Competitors | [competitor-research.md](references/competitor-research.md) | Closest products checked against primary sources, risky claims replaced. Time-boxed, never blocks submission |
 | 3. Documents | [submission-docs.md](references/submission-docs.md) | Five PDFs rendered, every page looked at, no `[FILL IN]`, numbers agree |
 | 4. Email | [submission-docs.md](references/submission-docs.md) | Draft file ready, humans told to send it |
 | 5. Deck | [deck-and-qa.md](references/deck-and-qa.md) | PPTX with embedded video, PDF backup, notes with clock stamps, every slide rendered and looked at |
