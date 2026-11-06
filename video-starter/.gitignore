@@ -1,0 +1,10 @@
+node_modules/
+out/
+raw/
+.env*
+public/sfx/
+public/music/
+public/vo/
+public/models/anims/
+public/screens/
+public/footage/

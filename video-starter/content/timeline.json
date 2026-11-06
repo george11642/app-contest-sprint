@@ -1,0 +1,459 @@
+{
+ "totalSec": 37.74,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "vo/b01.mp3",
+   "startSec": 0.0,
+   "durationSec": 4.935,
+   "highlight": "every study room",
+   "words": [
+    {
+     "word": "It's",
+     "start": 0.0,
+     "end": 0.22
+    },
+    {
+     "word": "eleven",
+     "start": 0.255,
+     "end": 0.625
+    },
+    {
+     "word": "at",
+     "start": 0.66,
+     "end": 0.83
+    },
+    {
+     "word": "night,",
+     "start": 0.865,
+     "end": 1.185
+    },
+    {
+     "word": "finals",
+     "start": 1.345,
+     "end": 1.715
+    },
+    {
+     "word": "week,",
+     "start": 1.75,
+     "end": 2.02
+    },
+    {
+     "word": "and",
+     "start": 2.18,
+     "end": 2.4
+    },
+    {
+     "word": "every",
+     "start": 2.435,
+     "end": 2.755
+    },
+    {
+     "word": "study",
+     "start": 2.79,
+     "end": 3.11
+    },
+    {
+     "word": "room",
+     "start": 3.145,
+     "end": 3.415
+    },
+    {
+     "word": "she",
+     "start": 3.45,
+     "end": 3.67
+    },
+    {
+     "word": "tries",
+     "start": 3.705,
+     "end": 4.025
+    },
+    {
+     "word": "is",
+     "start": 4.06,
+     "end": 4.23
+    },
+    {
+     "word": "locked.",
+     "start": 4.265,
+     "end": 4.635
+    }
+   ]
+  },
+  {
+   "id": "b02",
+   "file": "vo/b02.mp3",
+   "startSec": 5.085,
+   "durationSec": 2.75,
+   "highlight": "already knows",
+   "words": [
+    {
+     "word": "Lantern",
+     "start": 5.085,
+     "end": 5.505
+    },
+    {
+     "word": "already",
+     "start": 5.54,
+     "end": 5.96
+    },
+    {
+     "word": "knows",
+     "start": 5.995,
+     "end": 6.315
+    },
+    {
+     "word": "which",
+     "start": 6.35,
+     "end": 6.67
+    },
+    {
+     "word": "ones",
+     "start": 6.705,
+     "end": 6.975
+    },
+    {
+     "word": "are",
+     "start": 7.01,
+     "end": 7.23
+    },
+    {
+     "word": "open.",
+     "start": 7.265,
+     "end": 7.535
+    }
+   ]
+  },
+  {
+   "id": "b03",
+   "file": null,
+   "startSec": 7.885,
+   "durationSec": 1.0,
+   "highlight": "",
+   "words": []
+  },
+  {
+   "id": "b04",
+   "file": "vo/b04.mp3",
+   "startSec": 8.885,
+   "durationSec": 4.4,
+   "highlight": "go stale",
+   "words": [
+    {
+     "word": "Room",
+     "start": 8.885,
+     "end": 9.155
+    },
+    {
+     "word": "calendars",
+     "start": 9.19,
+     "end": 9.71
+    },
+    {
+     "word": "go",
+     "start": 9.745,
+     "end": 9.915
+    },
+    {
+     "word": "stale.",
+     "start": 9.95,
+     "end": 10.27
+    },
+    {
+     "word": "Door",
+     "start": 10.57,
+     "end": 10.84
+    },
+    {
+     "word": "signs",
+     "start": 10.875,
+     "end": 11.195
+    },
+    {
+     "word": "lie.",
+     "start": 11.23,
+     "end": 11.45
+    },
+    {
+     "word": "Group",
+     "start": 11.75,
+     "end": 12.07
+    },
+    {
+     "word": "chats",
+     "start": 12.105,
+     "end": 12.425
+    },
+    {
+     "word": "go",
+     "start": 12.46,
+     "end": 12.63
+    },
+    {
+     "word": "quiet.",
+     "start": 12.665,
+     "end": 12.985
+    }
+   ]
+  },
+  {
+   "id": "b05",
+   "file": "vo/b05.mp3",
+   "startSec": 14.885,
+   "durationSec": 4.42,
+   "highlight": "really free",
+   "words": [
+    {
+     "word": "Meet",
+     "start": 14.885,
+     "end": 15.155
+    },
+    {
+     "word": "Lantern.",
+     "start": 15.19,
+     "end": 15.61
+    },
+    {
+     "word": "Open",
+     "start": 15.91,
+     "end": 16.18
+    },
+    {
+     "word": "it,",
+     "start": 16.215,
+     "end": 16.385
+    },
+    {
+     "word": "and",
+     "start": 16.545,
+     "end": 16.765
+    },
+    {
+     "word": "walk",
+     "start": 16.8,
+     "end": 17.07
+    },
+    {
+     "word": "to",
+     "start": 17.105,
+     "end": 17.275
+    },
+    {
+     "word": "a",
+     "start": 17.31,
+     "end": 17.48
+    },
+    {
+     "word": "room",
+     "start": 17.515,
+     "end": 17.785
+    },
+    {
+     "word": "that",
+     "start": 17.82,
+     "end": 18.09
+    },
+    {
+     "word": "is",
+     "start": 18.125,
+     "end": 18.295
+    },
+    {
+     "word": "really",
+     "start": 18.33,
+     "end": 18.7
+    },
+    {
+     "word": "free.",
+     "start": 18.735,
+     "end": 19.005
+    }
+   ]
+  },
+  {
+   "id": "b06",
+   "file": "vo/b06.mp3",
+   "startSec": 19.305,
+   "durationSec": 6.075,
+   "highlight": "Nothing about you",
+   "words": [
+    {
+     "word": "The",
+     "start": 19.305,
+     "end": 19.525
+    },
+    {
+     "word": "phone",
+     "start": 19.56,
+     "end": 19.88
+    },
+    {
+     "word": "asks",
+     "start": 19.915,
+     "end": 20.185
+    },
+    {
+     "word": "our",
+     "start": 20.22,
+     "end": 20.44
+    },
+    {
+     "word": "server.",
+     "start": 20.475,
+     "end": 20.845
+    },
+    {
+     "word": "The",
+     "start": 21.145,
+     "end": 21.365
+    },
+    {
+     "word": "server",
+     "start": 21.4,
+     "end": 21.77
+    },
+    {
+     "word": "reads",
+     "start": 21.805,
+     "end": 22.125
+    },
+    {
+     "word": "the",
+     "start": 22.16,
+     "end": 22.38
+    },
+    {
+     "word": "door",
+     "start": 22.415,
+     "end": 22.685
+    },
+    {
+     "word": "sensors.",
+     "start": 22.72,
+     "end": 23.14
+    },
+    {
+     "word": "Nothing",
+     "start": 23.44,
+     "end": 23.86
+    },
+    {
+     "word": "about",
+     "start": 23.895,
+     "end": 24.215
+    },
+    {
+     "word": "you",
+     "start": 24.25,
+     "end": 24.47
+    },
+    {
+     "word": "is",
+     "start": 24.505,
+     "end": 24.675
+    },
+    {
+     "word": "stored.",
+     "start": 24.71,
+     "end": 25.08
+    }
+   ]
+  },
+  {
+   "id": "b07",
+   "file": "vo/b07.mp3",
+   "startSec": 25.38,
+   "durationSec": 2.25,
+   "highlight": "Sam Rivera · Jo Park",
+   "words": [
+    {
+     "word": "Built",
+     "start": 25.38,
+     "end": 25.7
+    },
+    {
+     "word": "by",
+     "start": 25.735,
+     "end": 25.905
+    },
+    {
+     "word": "Sam",
+     "start": 25.94,
+     "end": 26.16
+    },
+    {
+     "word": "Rivera",
+     "start": 26.195,
+     "end": 26.565
+    },
+    {
+     "word": "and",
+     "start": 26.6,
+     "end": 26.82
+    },
+    {
+     "word": "Jo",
+     "start": 26.855,
+     "end": 27.025
+    },
+    {
+     "word": "Park.",
+     "start": 27.06,
+     "end": 27.33
+    }
+   ]
+  },
+  {
+   "id": "b08",
+   "file": null,
+   "startSec": 27.83,
+   "durationSec": 2.2,
+   "highlight": "",
+   "words": []
+  },
+  {
+   "id": "b09",
+   "file": "vo/b09.mp3",
+   "startSec": 30.03,
+   "durationSec": 2.715,
+   "highlight": "open study room",
+   "words": [
+    {
+     "word": "Lantern.",
+     "start": 30.03,
+     "end": 30.45
+    },
+    {
+     "word": "Find",
+     "start": 30.75,
+     "end": 31.02
+    },
+    {
+     "word": "an",
+     "start": 31.055,
+     "end": 31.225
+    },
+    {
+     "word": "open",
+     "start": 31.26,
+     "end": 31.53
+    },
+    {
+     "word": "study",
+     "start": 31.565,
+     "end": 31.885
+    },
+    {
+     "word": "room",
+     "start": 31.92,
+     "end": 32.19
+    },
+    {
+     "word": "now.",
+     "start": 32.225,
+     "end": 32.445
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Contest Sprint"
+  short_description: "Finish an app contest entry from whatever exists now"
+  default_prompt: "Use $app-contest-sprint to scan this project, triage against today's date and the contest deadlines, and continue the entry from where it stands."

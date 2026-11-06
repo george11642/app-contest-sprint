@@ -1,0 +1,120 @@
+{
+  "title": "Lantern sample film",
+  "brand": { "app": "Lantern", "tagline": "Find an open study room now.", "accent": "#f0b55a", "calm": "#5cc7b2", "captionHi": "#ffcf6a" },
+  "voice": { "id": "nPczCjzI2devNBz1zQrb", "model": "eleven_v4" },
+  "endHoldSec": 5.0,
+  "music": [
+    { "file": "tension_loop", "from": { "beat": "b01" }, "to": { "beat": "b05" }, "level": 0.7 },
+    { "file": "product_pulse_loop", "from": { "beat": "b05", "frames": -8 }, "to": { "beat": "b08" }, "level": 0.9 },
+    { "file": "resolve_pad", "from": { "beat": "b08", "frames": -10 }, "to": { "beat": "b09", "end": true, "frames": 170 }, "level": 1.2 }
+  ],
+  "beats": [
+    {
+      "id": "b01",
+      "vo": "It's eleven at night, finals week, and every study room she tries is locked.",
+      "highlight": "every study room",
+      "note": "Cold open. Situation and stakes readable by frame 0.",
+      "shots": [
+        { "id": "cold", "type": "vignette", "set": "campus", "letterbox": true, "tag": "Dramatization · fictional characters",
+          "actors": [ { "cast": "lead", "at": [0, -6], "to": [0, 1.2], "clips": [ { "anim": "walk" } ], "face": { "smile": -0.2, "worry": 0.5 } } ],
+          "cam": { "from": { "pos": [1.5, 1.45, 3.5], "look": [0, 1.2, -3], "fov": 34 }, "to": { "pos": [1.0, 1.5, 5.4], "look": [0, 1.25, 0.6], "fov": 30 } } }
+      ],
+      "sfx": [ { "file": "night_ambience_loop", "vol": 0.35, "dur": 150, "loop": true, "fadeOut": 16 }, { "file": "footsteps_walk", "vol": 0.25, "dur": 140, "fadeOut": 10 } ]
+    },
+    {
+      "id": "b02",
+      "gapBefore": 0.15,
+      "vo": "Lantern already knows which ones are open.",
+      "highlight": "already knows",
+      "note": "Smash cut to the product acting. Real footage goes here.",
+      "shots": [
+        { "id": "hero", "type": "device", "pushIn": 4,
+          "screen": { "sample": { "title": "Open now", "status": "3 rooms near you", "rows": ["Library 214 · 2 seats", "Engineering 110 · 6 seats", "Student Union B · 4 seats"] } } }
+      ],
+      "sfx": [ { "file": "impact_hit", "vol": 0.55, "dur": 40, "fadeOut": 20 } ]
+    },
+    {
+      "id": "b03",
+      "gapBefore": 0.05,
+      "holdSec": 1.0,
+      "note": "Brand sting. No VO.",
+      "shots": [ { "id": "sting", "type": "brand" } ],
+      "sfx": [ { "file": "sticker_pop", "vol": 0.4, "dur": 22 } ]
+    },
+    {
+      "id": "b04",
+      "vo": "Room calendars go stale. Door signs lie. Group chats go quiet.",
+      "highlight": "go stale",
+      "note": "Problem: why the alternatives fail. Each line lands on its word.",
+      "shots": [
+        { "id": "problem", "type": "claims", "chapter": "The problem", "title": "Finding a room should not take an hour.",
+          "items": [ { "text": "Calendars go stale", "at": "calendars" }, { "text": "Door signs lie", "at": "Door" }, { "text": "Group chats go quiet", "at": "Group" } ] },
+        { "id": "statcard", "type": "stat", "at": "end", "chapter": "SAMPLE NUMBER, REPLACE WITH A SOURCED STAT", "kicker": "Placeholder", "value": 42, "suffix": "%", "label": "This number is a placeholder. Never ship it.", "citation": "Author, Journal, Year" }
+      ]
+    },
+    {
+      "id": "b05",
+      "gapBefore": 1.6,
+      "vo": "Meet Lantern. Open it, and walk to a room that is really free.",
+      "highlight": "really free",
+      "note": "Meet the app, then one feature: 3D cause, real app effect.",
+      "shots": [
+        { "id": "meet", "type": "device", "kicker": "Meet Lantern", "headline": "A room that is really free.",
+          "screen": { "sample": { "title": "Library 214", "status": "Free until 1:00 am", "rows": ["2 seats open", "Whiteboard", "Quiet floor"] } } },
+        { "id": "dorm", "type": "vignette", "at": "Open", "set": "dorm",
+          "actors": [ { "cast": "lead", "at": [-0.2, 0.4], "rotY": 0.4, "hold": "phone", "phoneGlow": 0.8, "clips": [ { "anim": "phoneUp" } ], "face": { "smile": 0.5 } } ],
+          "cam": { "from": { "pos": [0.5, 1.45, 2.7], "look": [-0.2, 1.25, 0.2], "fov": 34 }, "to": { "pos": [0.35, 1.45, 2.3], "look": [-0.2, 1.3, 0.3], "fov": 32 } } }
+      ],
+      "sfx": [ { "file": "ui_tap", "at": "Open", "vol": 0.3, "dur": 10 } ]
+    },
+    {
+      "id": "b06",
+      "vo": "The phone asks our server. The server reads the door sensors. Nothing about you is stored.",
+      "highlight": "Nothing about you",
+      "note": "Architecture: 7 to 8 s at most. Packets on each named edge. Every claim must be true.",
+      "shots": [
+        { "id": "arch", "type": "architecture", "chapter": "How it works",
+          "zones": [ { "label": "Phone", "x": 150, "w": 480 }, { "label": "Cloud", "color": "#5cc7b2", "x": 720, "w": 480 }, { "label": "Campus", "color": "#9fb2ff", "x": 1290, "w": 480 } ],
+          "nodes": [
+            { "id": "app", "label": "Lantern app", "x": 200, "y": 420, "w": 380, "at": "phone" },
+            { "id": "api", "label": "Room API", "sub": "no accounts", "x": 770, "y": 420, "w": 380, "color": "#5cc7b2", "at": "server." },
+            { "id": "sensors", "label": "Door sensors", "x": 1340, "y": 420, "w": 380, "color": "#9fb2ff", "at": "sensors." }
+          ],
+          "edges": [ { "from": "app", "to": "api", "at": "server." }, { "from": "api", "to": "sensors", "at": "reads" } ],
+          "banner": "SAMPLE DIAGRAM" }
+      ]
+    },
+    {
+      "id": "b07",
+      "vo": "Built by Sam Rivera and Jo Park.",
+      "highlight": "Sam Rivera · Jo Park",
+      "note": "Team beat. Names land on the VO. Real names, schools, majors. These are fictional.",
+      "shots": [
+        { "id": "team", "type": "team", "chapter": "The team",
+          "people": [ { "name": "Sam Rivera", "detail": "Sample major", "at": "Sam" }, { "name": "Jo Park", "detail": "Sample major", "at": "Jo" } ],
+          "screen": { "sample": { "title": "Open now", "status": "Sample", "rows": ["Library 214", "Engineering 110"] } } }
+      ]
+    },
+    {
+      "id": "b08",
+      "holdSec": 2.2,
+      "gapBefore": 0.2,
+      "note": "Resolution with no VO. Let it breathe.",
+      "shots": [
+        { "id": "home", "type": "vignette", "set": "campus", "dim": 0,
+          "actors": [ { "cast": "lead", "at": [-0.45, 2], "rotY": 0.3, "clips": [ { "anim": "idle" } ], "face": { "smile": 0.7 } }, { "cast": "friend", "at": [0.45, 2], "rotY": -0.3, "clips": [ { "anim": "talk" } ], "face": { "smile": 0.6 } } ],
+          "cam": { "from": { "pos": [0, 1.4, 6.4], "look": [0, 1.15, 2], "fov": 30 }, "to": { "pos": [0, 1.4, 5.6], "look": [0, 1.2, 2], "fov": 30 } } }
+      ]
+    },
+    {
+      "id": "b09",
+      "vo": "Lantern. Find an open study room now.",
+      "highlight": "open study room",
+      "noCaption": true,
+      "note": "Close. Tagline, disclaimer, resources, credits. Hold everything fully readable for 4.5 s or more.",
+      "shots": [
+        { "id": "end", "type": "end", "subhead": "Sample film. Replace everything.", "team": "Sam Rivera · Jo Park · Sample Contest 2026" }
+      ]
+    }
+  ]
+}

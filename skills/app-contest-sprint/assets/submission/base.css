@@ -1,0 +1,26 @@
+/* Shared print stylesheet. Change --accent and the fonts to match the app. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap");
+:root { --ink: #1b1a24; --muted: #5d5b6e; --line: #dddbe6; --band: #16151f; --accent: #2f6fde; --soft: #f4f3f8; }
+@page { size: Letter; margin: 0.7in 0.75in 0.8in;
+  @bottom-left { content: var(--footer, ""); font: 8.5pt Inter, Arial, sans-serif; color: #77758a; }
+  @bottom-right { content: counter(page) " / " counter(pages); font: 8.5pt Inter, Arial, sans-serif; color: #77758a; } }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 10.5pt/1.45 Inter, Arial, sans-serif; color: var(--ink); }
+.band { background: var(--band); color: #fff; padding: 22pt 24pt; border-radius: 10pt; margin-bottom: 16pt; }
+.band .kicker { font: 500 8.5pt "JetBrains Mono", "Courier New", monospace; letter-spacing: .12em; text-transform: uppercase; color: #c9c6da; }
+.band h1 { font-size: 24pt; line-height: 1.15; margin: 6pt 0 4pt; }
+.band p { margin: 0; color: #dcdae6; }
+h2 { font-size: 14pt; margin: 18pt 0 6pt; color: var(--accent); break-after: avoid; }
+h3 { font-size: 11pt; margin: 12pt 0 4pt; break-after: avoid; }
+p { margin: 0 0 7pt; }
+table { width: 100%; border-collapse: collapse; margin: 6pt 0 12pt; font-size: 9.5pt; }
+th { text-align: left; background: var(--soft); border-bottom: 1.5pt solid var(--line); padding: 5pt 6pt; }
+td { border-bottom: .75pt solid var(--line); padding: 5pt 6pt; vertical-align: top; }
+tr, .card, figure { break-inside: avoid; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin: 8pt 0; }
+.card { border: .75pt solid var(--line); border-radius: 8pt; padding: 9pt 11pt; background: #fff; }
+.box { background: var(--soft); border-left: 3pt solid var(--accent); padding: 8pt 11pt; border-radius: 4pt; margin: 8pt 0; break-inside: avoid; }
+.fill { background: #ffe94d; font-weight: 700; padding: 0 3pt; }
+.small { font-size: 8.5pt; color: var(--muted); }
+figure { margin: 8pt 0; } figure svg, figure img { width: 100%; height: auto; }
+figcaption { font-size: 8.5pt; color: var(--muted); margin-top: 3pt; }
