@@ -92,3 +92,40 @@ Commit "System integration for TestFlight" fixed all of these. **[SafetySense ex
 - **Do not trust a simulator result for system surfaces.** Lock Screen controls, Live Activities and widgets need a device.
 
 ## Field notes
+
+From a real run. No build had finished processing when these were written, so steps after upload are planned, not proven.
+
+### Accounts and access (sort out on day one)
+- You need a paid Apple Developer membership or access to someone's team, an App Store Connect API key (`.p8` in `~/.appstoreconnect/private_keys`, plus key ID and issuer ID), and an Apple Distribution certificate with its private key in the local keychain.
+- App Store Connect Admin does not include portal access. On a shared team, only the Account Holder may be able to reach Certificates, Identifiers & Profiles. Get their written OK and ask for portal steps before the build, not after.
+- Confirm a certificate is usable by comparing the SHA-1 of its `certificateContent` with `security find-certificate -Z`. Team certificates may have no local private key.
+
+### What the API can and cannot do
+- Can: register bundle IDs (`POST /v1/bundleIds`), enable capabilities (`POST /v1/bundleIdCapabilities`), create `IOS_APP_STORE` profiles (`POST /v1/profiles`; write the base64 `profileContent` to `~/Library/MobileDevice/Provisioning Profiles/<uuid>.mobileprovision`), list builds, manage beta groups.
+- Cannot: create the app record (`POST /v1/apps` returns 403; use the App Store Connect website), create App Groups (`/v1/appGroups` returns 404), assign groups to App IDs, or enable Time Sensitive Notifications.
+- Each extension needs its own bundle ID and profile. A bundle ID registered by API shows up in the website's New App dropdown right away.
+
+### Archive, export, upload
+- Signing: Release is Manual, `CODE_SIGN_IDENTITY` "Apple Distribution", `PROVISIONING_PROFILE_SPECIFIER` per target. Debug stays Automatic.
+- Archive: `xcodebuild -project X -scheme X -configuration Release -destination generic/platform=iOS -archivePath build/X.xcarchive archive CURRENT_PROJECT_VERSION=<n>`
+- Export: `xcodebuild -exportArchive -archivePath build/X.xcarchive -exportPath build/export -exportOptionsPlist ExportOptions.plist`. Plist: `destination` export, `method` app-store-connect, `signingStyle` manual, `teamID`, `uploadSymbols` true, `manageAppVersionAndBuildNumber` false, and a `provisioningProfiles` map of bundle ID to profile name, one per target.
+- Upload: `xcrun altool --upload-package X.ipa --type ios --apple-id <numeric app id> --bundle-id <id> --bundle-short-version-string <v> --bundle-version <n> --apiKey <key id> --apiIssuer <issuer id>`
+- Set `ITSAppUsesNonExemptEncryption` to false in Info.plist only if that is true for the app.
+- Never reuse a build number for the same version.
+- Internal testers (up to 100 App Store Connect users) need no Beta App Review. External testers and public links do, commonly 24-48 hours, so start early. Do not submit for App Store review: contest entries must stay unpublished.
+
+### Failures and fixes
+- Plain `xcodebuild` can hang in an agent shell at `clang -v -E -dM`. Run it under a stripped environment in a wrapper script: `env -i HOME="$HOME" USER="$USER" TMPDIR="$TMPDIR" PATH=/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin xcodebuild ... </dev/null`
+- Parallel builds sharing `-derivedDataPath` give "build.db disk I/O error" and linker failures. Run one at a time and delete ArchiveIntermediates between archives.
+- Automatic signing with `-allowProvisioningUpdates` and an API key failed with "Authentication failed: bearer token" even though the key worked against the REST API. Cause unknown, so do not count on it. With no Xcode account, automatic signing fails with "No Accounts".
+- Signing into Xcode as an Admin without portal access gives "No Account for Team". Setting `provisioningAllowed` by API returned 409.
+- If a profile lacks App Groups or Time Sensitive, the archive errors with "doesn't support the group...". The workaround used was reduced Release entitlements. XcodeGen writes target entitlements into every config, so a config-level `CODE_SIGN_ENTITLEMENTS` is ignored; patch `project.pbxproj` after generating, inside the release script.
+- Without App Groups, widgets and the app cannot share UserDefaults. Handle `containerURL(forSecurityApplicationGroupIdentifier:)` returning nil. A shared Keychain access group was planned as the fallback but is unproven on device.
+- Altool error 90474 (iPad orientations required): XcodeGen presets overrode `TARGETED_DEVICE_FAMILY` to "1,2" at target level. Set "1" in each target's settings. The fix was applied but not yet re-uploaded when these notes were written.
+- Website form automation: synthetic input did not stick on framework selects; focusing the field and typing the option text worked.
+
+### App and prototype drift
+The prototype was built from app screenshots, then only the prototype was extended, so the two drifted. Pick one source of truth, or sync after every prototype change. To catch drift, audit every prototype frame against the code and simulator screenshots, fix the gaps, then have a separate reviewer click the flows against the frames.
+
+### Human-only steps
+Paying for membership, Account Holder portal steps, accepting agreements, Apple ID password and 2FA (never give these to an agent; a password pasted in chat stays in transcripts, so rotate it), real-device testing, and sending the submission email.
