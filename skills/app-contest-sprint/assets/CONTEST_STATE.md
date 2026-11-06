@@ -28,6 +28,7 @@ Durable ledger for the app-contest-sprint skill. Any session on any tool resumes
 | Screens captured | | | | no |
 | Prototype built | | | | yes |
 | Prototype shared, signed-out test | | | | yes |
+| Competitor research, claims checked | | | | no |
 | Prototype QA | | | | no |
 | Purpose PDF | | | | yes |
 | Technical PDF with diagram | | | | yes |
